@@ -14,6 +14,7 @@ import java.awt.Toolkit;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import org.jdesktop.jxlayer.JXLayer;
@@ -27,6 +28,8 @@ public class SoftSimplesFrame extends JFrame implements OpenWindowListener, Clos
     private JComponent defaultGlassPane;
 
     public SoftSimplesFrame() {
+        super("SSFace - beta");
+        this.setIconImage(new ImageIcon(SoftSimplesFrame.class.getResource("/icons/package.png")).getImage());
         this.softSimplesMenu = new SoftSimplesMenu(this, "/background/fundo2.jpg");
         this.layer = new JXLayer(this.softSimplesMenu);
         this.defaultGlassPane = this.layer.getGlassPane();
